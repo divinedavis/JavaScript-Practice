@@ -2,26 +2,40 @@
 <html>
   <head>
 
-    <!-- <title>Hello From JavaScript!</title> -->
+    <title>Date and Time</title>
+
+    <style>
+
+    p {font: 14px normal arial, verdana, helvetic;}
+
+    </style>
 
     <script>
 
-    // var celcius;
-    //
-    // function turnFahrenheitIntoCelcius(fahrenheit) {
-    //   return celcius = (fahrenheit - 32) * 5/9 ;
-    // }
-    //
-    // alert(turnFahrenheitIntoCelcius(55));
-    // console.log(document.title);
-    var title = document.title;
-    title = "What's up?";
-    alert(title);
+    function tellTime() {
+      var out = "";
+      var now = new Date();
+      out += "<br />Date: " + now.getDate();
+      out += "<br />Month: " + now.getMonth();
+      out += "<br />Year: " + now.getFullYear();
+      out += "<br />Hours: " + now.getHours();
+      out += "<br />Minutes: " + now.getMinutes();
+      out += "<br />Seconds: " + now.getSeconds();
+      document.getElementById("div1").innerHTML = out
+    }
 
     </script>
 
   </head>
   <body>
+
+    The current date and time are:<br/>
+    <div id="div1"></div>
+    <script>
+    tellTime();
+    </script>
+
+    <input type="button" onclick="location.reload()" value="Refresh"/>
 
   </body>
 </html>
