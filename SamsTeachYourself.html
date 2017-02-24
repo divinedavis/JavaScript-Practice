@@ -2,7 +2,7 @@
 <html>
   <head>
 
-    <title>Date and Time</title>
+    <title>Spam Detector</title>
 
     <style>
 
@@ -12,30 +12,25 @@
 
     <script>
 
-    function tellTime() {
-      var out = "";
-      var now = new Date();
-      out += "<br />Date: " + now.getDate();
-      out += "<br />Month: " + now.getMonth();
-      out += "<br />Year: " + now.getFullYear();
-      out += "<br />Hours: " + now.getHours();
-      out += "<br />Minutes: " + now.getMinutes();
-      out += "<br />Seconds: " + now.getSeconds();
-      document.getElementById("div1").innerHTML = out
-    }
 
     </script>
 
   </head>
   <body>
 
-    The current date and time are:<br/>
-    <div id="div1"></div>
+
     <script>
-    tellTime();
+    function detectSpam(input) {
+      input = input.toLowerCase();
+      return input.substr(4, 8);
+    }
+
+    var mystring = prompt("Enter a string");
+    alert(detectSpam(mystring));
+
+
     </script>
 
-    <input type="button" onclick="location.reload()" value="Refresh"/>
 
   </body>
 </html>
